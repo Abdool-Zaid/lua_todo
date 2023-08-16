@@ -16,7 +16,8 @@ local res = input_command()
         ops.update()
     
     elseif res == "n" then
-        ops.create()
+        io.write("new task>>>")
+        ops.create(io.read())
     
     elseif res == "r" then   
         ops.delete()

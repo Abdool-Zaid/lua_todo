@@ -1,8 +1,25 @@
 local ops = {}
 
 
-function ops.ceate()
-    print("create new todo")
+
+function open_file()
+    local file = io.open("data.tsk", "r")
+    local content= {}
+    for task in file:lines() do
+        table.insert(content, task)  
+    end
+    file:close()
+    return content
+end    
+
+
+
+
+function ops.create(task)
+    local file = io.open("data.tsk","a")
+    file:write("\n" ..task)
+    file:close()
+    ops.read()
 end
 
 
@@ -10,17 +27,11 @@ end
 
 
 function ops.read()
-    local file = io.open("data.tsk", "r")
-    local content= {}
-    for task in file:lines() do
-        table.insert(content, task)  
-    end
-
-    file:close()
-    for index, value in pairs(content) do
+    local tasks = open_file()
+    
+    for index, value in pairs(tasks) do
     print(index .. "||" .. value )
     end
-
 end
 
 
@@ -40,8 +51,10 @@ end
 
 
 
-function ops.delete()
-    print("delete todo")
+function ops.delete(...)
+    local delete_list = {...}
+
+
 end
 
 return ops
