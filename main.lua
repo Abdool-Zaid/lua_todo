@@ -28,7 +28,7 @@ end
 local iter=false
 while true do 
     if iter==true then
-    print("\n\n\n")
+    print("\n")
     end
         loop_func()
         iter=true
