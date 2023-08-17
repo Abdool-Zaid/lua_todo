@@ -1,5 +1,5 @@
  local ops = require("ops")
-  
+
 
 function input_command()
     io.write("commandlist: \nd:display tasks\nu:update tasks\nn:new task\nr:remove task\ne:exit\nselected: ")
@@ -8,32 +8,30 @@ end
 
 function loop_func()
 local res = input_command()
- 
+
     if res == "d" then
         ops.read()
-    
+
     elseif res == "u" then
         ops.update()
-    
+
     elseif res == "n" then
         io.write("new task>>>")
         ops.create(io.read())
-    
+
     elseif res == "e" then
         os.exit()
-    elseif res == "r" then   
+    elseif res == "r" then
         io.write("delete task no...")
 
-        local del_list=io.read()
-        
-        ops.delete(tonumber(del_list))
+        ops.delete(io.read())
         ops.read()
     else
     -- failure state
-    end    
-end   
+    end
+end
 local iter=false
-while true do 
+while true do
     if iter==true then
     print("\n")
     end

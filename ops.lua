@@ -53,9 +53,10 @@ end
 
 
 function ops.delete(...)
-    for key, value in pairs({...}) do
-    print( key .."||" .. value)
-    end
+    print(type(...))
+    -- for key, value in pairs({...}) do
+    -- print( key .."||" .. value)
+    -- end
 
 end
 
