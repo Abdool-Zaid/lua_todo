@@ -27,10 +27,11 @@ end
 
 
 function ops.read()
+    os.execute("cls")
     local tasks = open_file()
     
     for index, value in pairs(tasks) do
-    print(index .. "||" .. value )
+        print(index .. "||" .. value )
     end
 end
 
@@ -52,8 +53,9 @@ end
 
 
 function ops.delete(...)
-    local delete_list = {...}
-
+    for key, value in pairs({...}) do
+    print( key .."||" .. value)
+    end
 
 end
 

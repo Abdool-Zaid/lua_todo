@@ -2,7 +2,7 @@
   
 
 function input_command()
-    io.write("commandlist: \nd:display tasks\nu:update tasks\nn:new task\nr:remove task\nselected: ")
+    io.write("commandlist: \nd:display tasks\nu:update tasks\nn:new task\nr:remove task\ne:exit\nselected: ")
     return io.read()
 end
 
@@ -19,9 +19,15 @@ local res = input_command()
         io.write("new task>>>")
         ops.create(io.read())
     
+    elseif res == "e" then
+        os.exit()
     elseif res == "r" then   
-        ops.delete()
-    
+        io.write("delete task no...")
+
+        local del_list=io.read()
+        
+        ops.delete(tonumber(del_list))
+        ops.read()
     else
     -- failure state
     end    
