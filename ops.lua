@@ -56,7 +56,7 @@ function ops.delete(list)
     local del_list = stringToTable(list)
     for key, value in pairs(del_list) do
     -- print( key .."||" .. value)
-print
+
     end
 
 end
