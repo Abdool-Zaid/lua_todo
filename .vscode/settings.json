@@ -1,4 +1,10 @@
 {
-  "Lua.diagnostics.globals": ["input_command", "loop_func", "open_file"],
+  "Lua.diagnostics.globals": [
+    "input_command",
+    "loop_func",
+    "open_file",
+    "splitString",
+    "stringToTable"
+  ],
   "Lua.diagnostics.disable": ["need-check-nil"]
 }

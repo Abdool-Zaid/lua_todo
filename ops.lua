@@ -52,12 +52,35 @@ end
 
 
 
-function ops.delete(...)
-    print(type(...))
-    -- for key, value in pairs({...}) do
+function ops.delete(list)
+    local del_list = stringToTable(list)
+    for key, value in pairs(del_list) do
     -- print( key .."||" .. value)
-    -- end
+print
+    end
 
+end
+function splitString(input, delimiter)
+    local result = {}
+    local pattern = string.format("([^%s]+)", delimiter)
+    input:gsub(pattern, function(item) result[#result + 1] = item end)
+    return result
+end
+
+function stringToTable(inputString)
+    local splitNumbers = splitString(inputString, ",")
+
+    local resultTable = {}
+    for _, numStr in ipairs(splitNumbers) do
+        local num = tonumber(numStr)
+        if num then
+            table.insert(resultTable, num)
+        else
+            print("Invalid number:", numStr)
+        end
+    end
+
+    return resultTable
 end
 
 return ops

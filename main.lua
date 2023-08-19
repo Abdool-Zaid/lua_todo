@@ -23,9 +23,8 @@ local res = input_command()
         os.exit()
     elseif res == "r" then
         io.write("delete task no...")
-
         ops.delete(io.read())
-        ops.read()
+        -- ops.read()
     else
     -- failure state
     end
