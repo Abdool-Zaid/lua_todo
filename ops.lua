@@ -10,7 +10,7 @@ function open_file()
     end
     file:close()
     return content
-end    
+end
 
 
 
@@ -54,11 +54,13 @@ end
 
 function ops.delete(list)
     local del_list = stringToTable(list)
-    for key, value in pairs(del_list) do
-    -- print( key .."||" .. value)
-
-    end
-
+    local file = io.open("data.tsk", "w")
+    local content = open_file()
+        for key, value in pairs(content) do
+        -- print( key .."||" .. value)
+            print('egg')
+        end
+    file:close()
 end
 function splitString(input, delimiter)
     local result = {}
