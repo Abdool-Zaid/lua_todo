@@ -1,7 +1,5 @@
  local ops = require("ops")
-
 function input_command()
-    -- os.execute("cls")
     io.write("commandlist: \nd:display tasks\nu:update tasks\nn:new task\nr:remove task\ne:exit\nselected: ")
     return io.read()
 end

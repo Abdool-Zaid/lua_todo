@@ -28,7 +28,9 @@ function ops.update(pos)
     local task_no= pos
     io.write("input changes..")
     local up_task =io.read()
+    ops.delete(task_no)
     table.insert(tasks, task_no, up_task )
+    ops.read()
 end
 
 function ops.delete(del)
@@ -38,8 +40,13 @@ function ops.delete(del)
 end
 
 function ops.close()
-    
-    -- os.exit()
+    local file = io.open('data.tsk', "w")
+        for _ , value in pairs(tasks) do
+        file:write(value .. "\n")
+        end
+    file:close()
+    os.exit()
+
 
 end
 
