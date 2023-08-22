@@ -12,24 +12,33 @@ end
 
 local tasks = start()
 
-function ops.create()
-    print("create")
+function ops.create(new_task)
+table.insert(tasks, new_task)
+ops.read()
 end
 
 function ops.read()
-    print("read")
+    os.execute("cls")
+    for key, value in pairs(tasks) do
+        print(key.. "||".. value)
+    end
 end
 
-function ops.update()
-    print("update")
+function ops.update(pos)
+    local task_no= pos
+    io.write("input changes..")
+    local up_task =io.read()
+    table.insert(tasks, task_no, up_task )
 end
 
-function ops.delete()
-    print("delete")
+function ops.delete(del)
+    local delet = tonumber(del)
+    table.remove(tasks,delet)
+    ops.read()
 end
 
 function ops.close()
-    print("close")
+    
     -- os.exit()
 
 end

@@ -13,7 +13,9 @@ local res = input_command()
         ops.read()
 
     elseif res == "u" then
-        ops.update()
+        io.write("update task no...")
+        ops.update(io.read())
+   
 
     elseif res == "n" then
         io.write("new task>>>")
