@@ -1,7 +1,7 @@
  local ops = require("ops")
 
-
 function input_command()
+    -- os.execute("cls")
     io.write("commandlist: \nd:display tasks\nu:update tasks\nn:new task\nr:remove task\ne:exit\nselected: ")
     return io.read()
 end
@@ -20,11 +20,11 @@ local res = input_command()
         ops.create(io.read())
 
     elseif res == "e" then
-        os.exit()
+        ops.close()
+
     elseif res == "r" then
         io.write("delete task no...")
         ops.delete(io.read())
-        -- ops.read()
     else
     -- failure state
     end
